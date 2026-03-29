@@ -1,0 +1,309 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:views="clr-namespace:WpfApp1"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="600"
+        Width="900"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="False"
+        Background="Transparent" Icon="/icon.jpg" Title="Rust Optimizer" Cursor="">
+
+    <Window.Resources>
+        <Style x:Key="GlowButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#1E1E1E"/>
+            <Setter Property="BorderThickness" Value="0"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+                        <Border x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="10"
+                        Padding="10"
+                        BorderBrush="White"
+                        BorderThickness="1">
+
+                            <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="White"
+                              BlurRadius="20"
+                              ShadowDepth="0"
+                              Opacity="0.6"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="Tag" Value="Selected">
+                                <Setter TargetName="border" Property="Background" Value="White"/>
+
+                                <Setter TargetName="border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="0"
+                              Color="White"
+                              Opacity="1"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Trigger>
+
+
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid>
+
+          
+            <Border Width="5"
+            HorizontalAlignment="Left"
+            Background="Transparent"
+            Cursor="SizeWE"
+            MouseDown="Resize_Left"/>
+
+           
+            <Border Width="5"
+            HorizontalAlignment="Right"
+            Background="Transparent"
+            Cursor="SizeWE"
+            MouseDown="Resize_Right"/>
+
+           
+            <Border Height="5"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            Cursor="SizeNS"
+            MouseDown="Resize_Top"/>
+
+            
+            <Border Height="5"
+            VerticalAlignment="Bottom"
+            Background="Transparent"
+            Cursor="SizeNS"
+            MouseDown="Resize_Bottom"/>
+
+            
+            <Border Width="10" Height="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            Cursor="SizeNWSE"
+            MouseDown="Resize_TopLeft"/>
+
+           
+            <Border Width="10" Height="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            Cursor="SizeNESW"
+            MouseDown="Resize_TopRight"/>
+
+           
+            <Border Width="10" Height="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="Transparent"
+            Cursor="SizeNESW"
+            MouseDown="Resize_BottomLeft"/>
+
+            
+            <Border Width="10" Height="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Background="Transparent"
+            Cursor="SizeNWSE"
+            MouseDown="Resize_BottomRight"/>
+            <Grid Background="Transparent" Margin="12">
+
+
+                <Grid>
+
+
+                    <Border CornerRadius="12"
+                        Margin="-8"
+                        Opacity="0.8">
+
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop x:Name="g1" Color="#00FFFFFF" Offset="0"/>
+                                <GradientStop x:Name="g2" Color="#FFFFFFFF" Offset="0.5"/>
+                                <GradientStop x:Name="g3" Color="#00FFFFFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+
+                        <Border.Effect>
+                            <DropShadowEffect
+                         Color="#22FFFFFF"
+                            BlurRadius="25"
+                            ShadowDepth="0"
+                            Opacity="1"/>
+                        </Border.Effect>
+
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="g2"
+                                        Storyboard.TargetProperty="Offset"
+                                        From="0" To="1"
+                                        Duration="0:0:1"
+                                        AutoReverse="True"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+
+
+                    <Border Background="#252525"
+                        CornerRadius="13">
+
+                        <Grid>
+
+
+                            <Border Background="#FF121111"
+                                Height="70"
+                                VerticalAlignment="Top"
+                                MouseLeftButtonDown="Header_MouseLeftButtonDown">
+
+                                <Grid>
+                                    <Image Source="/rust_94773.png"
+                                       Width="55"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,0,0,0"/>
+
+                                    <TextBlock Text="Rust Optimizer"
+                                           Foreground="#FFB1AEAE"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           FontFamily="Cascadia Mono"
+                                           FontWeight="ExtraBlack"
+                                           FontSize="28"/>
+
+                                    <Button Content=""
+                                        HorizontalAlignment="Right"
+                                        Margin="0,0,10,0"
+                                        Style="{StaticResource GlowButton}"
+                                        VerticalAlignment="Center"
+                                        Width="55"
+                                        Height="50"
+                                        BorderBrush="{x:Null}"
+                                        FocusVisualStyle="{x:Null}"
+                                        Foreground="{x:Null}"
+                                        Click="Close_button">
+
+                                        <Button.Background>
+                                            <ImageBrush x:Name="close_button"
+                                                    ImageSource="/[CITYPNG.COM]PNG Close X Logo White Icon - 1000x1000.png"/>
+                                        </Button.Background>
+
+                                    </Button>
+                                </Grid>
+                            </Border>
+
+
+                            <Grid Margin="0,70,0,0" Background="#252525">
+
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Name="SidebarColumn" Width="200"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <StackPanel x:Name="Sidebar"
+                                        Background="#1A1A1A"
+                                        Visibility="Collapsed">
+
+                                    <Button x:Name="HomeButton"
+                                        Content="Home"
+                                        Click="Home_Click"/>
+
+                                    <Button x:Name="Homee_button"
+                                        Content="Home"
+                                        Click="Settings_Click"
+                                        Style="{StaticResource GlowButton}"
+                                        Width="180"
+                                        Height="50"
+                                        Background="#121111"
+                                        Foreground="#B1AEAE"
+                                        Margin="10"
+                                        FontFamily="Cascadia Mono"
+                                        FontSize="20"
+                                        FontWeight="ExtraBlack"/>
+
+                                    <Button x:Name="win_button"
+                                        Content="Windows"
+                                        Click="Ruster_Click"
+                                        Style="{StaticResource GlowButton}"
+                                        Width="180"
+                                        Height="50"
+                                        Background="#121111"
+                                        Foreground="#B1AEAE"
+                                        Margin="10"
+                                        FontFamily="Cascadia Mono"
+                                        FontSize="20"
+                                        FontWeight="ExtraBlack"/>
+                                    <Button x:Name="rust_button"
+                                 Content="Rust"
+                                 Click="Rust_Click"
+                                 Style="{StaticResource GlowButton}"
+                                 Width="180"
+                                 Height="50"
+                                 Background="#121111"
+                                 Foreground="#B1AEAE"
+                                 Margin="10"
+                                 FontFamily="Cascadia Mono"
+                                 FontSize="20"
+                                 FontWeight="ExtraBlack"/>
+
+
+                                </StackPanel>
+
+                                <!-- CONTENT -->
+                                <ContentControl x:Name="MainContent"
+                                            Grid.Column="1"
+                                            Background="#252525"/>
+
+                            </Grid>
+                            <TextBlock Text="v0.1 | t.me/RustPerfomance"
+          Foreground="#888"
+          FontSize="12"
+          Margin="5,0,10,10"
+                         FontFamily="Cascadia Mono"
+            FontWeight="ExtraBlack"
+          
+          HorizontalAlignment="Left"
+          VerticalAlignment="Bottom"
+          Panel.ZIndex="999"/>
+                        </Grid>
+
+                    </Border>
+
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>
