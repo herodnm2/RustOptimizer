@@ -2,8 +2,8 @@
 ### FPS & Graphics Presets Tool for Rust
 
 ## 🧩 About
-<img width="1920" height="1440" alt="291_1x_shots_so" src="https://github.com/user-attachments/assets/386ce4cf-3725-4f60-b792-7289bd485096" />
 
+<img width="1920" height="1440" alt="978_1x_shots_so" src="https://github.com/user-attachments/assets/8d045159-5433-4bfa-ae61-d4de1ce4e2f2" />
 
 Rust Optimizer is a lightweight open-source tool that applies optimized graphics presets automatically to improve FPS and overall performance in Rust.
 
