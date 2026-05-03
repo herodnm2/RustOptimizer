@@ -1,35 +1,8 @@
-# 🚀 Rust Optimizer
-### FPS & Graphics Presets Tool for Rust
-
-## 🧩 About
-
 <img width="1920" height="1440" alt="978_1x_shots_so" src="https://github.com/user-attachments/assets/8d045159-5433-4bfa-ae61-d4de1ce4e2f2" />
 
 Rust Optimizer is a lightweight open-source tool that applies optimized graphics presets automatically to improve FPS and overall performance in Rust.
 
-It helps avoid manual tweaking and provides consistent results with minimal effort.
-
----
-
-## ✨ Features
-
-- ⚡ One-click preset application  
-- 🎮 Optimized for stable FPS  
-- 🧠 Smart balance between visuals and performance  
-- 🧹 Removes unnecessary visual effects  
-- 🖥️ Clean and simple UI  
-
----
-
-## ⚙️ Presets
-
-- 🟢 **Min** — Maximum FPS, lowest latency  
-- 🟡 **Medium** — Balanced visuals and performance  
-- 🔵 **High** — Better graphics with optimization  
-
----
-
-## 📥 Installation
+## Installation
 
 1. Go to the Releases page  
 2. Download the latest version  
@@ -39,7 +12,7 @@ It helps avoid manual tweaking and provides consistent results with minimal effo
 
 ---
 
-## 🛠️ How It Works
+## How It Works
 
 - Uses existing in-game graphics settings  
 - Applies optimized configurations  
@@ -48,7 +21,7 @@ It helps avoid manual tweaking and provides consistent results with minimal effo
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 - Not affiliated with Facepunch Studios  
 - This tool does not provide cheats or unfair advantages  
@@ -56,7 +29,7 @@ It helps avoid manual tweaking and provides consistent results with minimal effo
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome!
 
