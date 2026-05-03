@@ -8,8 +8,6 @@ Rust Optimizer is a lightweight open-source tool that applies optimized graphics
 2. Download the latest version  
 3. Run the application  
 
-👉 https://github.com/herodnm2/RustOptimizer/releases  
-
 ---
 
 ## How It Works
